@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Health Kit
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Set Height</ion-label>
+    <ion-input type="text" [(ngModel)]="height" placeholder="My Height today (in cm)"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Current Height</ion-label>
+    <ion-input type="text" [(ngModel)]="currentHeight" readonly></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>steps last 24h</ion-label>
+    <ion-input type="text" [(ngModel)]="stepcount" readonly></ion-input>
+  </ion-item>
+
+  <ion-button color="primary" (click)="saveHeight()">Set Height</ion-button>
+  <ion-button color="primary" (click)="saveWorkout()">Set a workout</ion-button>
+
+  <ion-list>
+    <ion-card *ngFor="let workout of workouts">
+      <ion-card-header>{{workout.calories}}</ion-card-header>
+      <ion-card-content>
+        <p>Activity: {{ workout.activityType }}</p>
+        <p>Duration: {{ workout.duration / 60  }}</p>
+        <p>Date: {{ workout.startDate | date:'short' }}</p>
+        <p>Distane: {{ workout.miles  }} miles</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+
+</ion-content>

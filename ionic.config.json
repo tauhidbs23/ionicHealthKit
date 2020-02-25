@@ -1,0 +1,8 @@
+{
+  "name": "health-kit",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
